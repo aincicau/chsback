@@ -33,6 +33,7 @@ func main() {
 	router.Route("/", func(r chi.Router) {
 		r.Post("/user", rest.CreateUser)
 		r.Post("/login", rest.Login)
+		r.Get("/history", rest.GetHistory)
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))

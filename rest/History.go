@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-func GetEntitlements(rw http.ResponseWriter, r *http.Request) {
+func GetHistory(rw http.ResponseWriter, r *http.Request) {
 	sessionDetails, err := store.Get(r, "cookieMonster")
 
 	if utils.HasError(err, common.INTERNAL_SERVER_ERROR) {
