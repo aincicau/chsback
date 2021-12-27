@@ -21,8 +21,8 @@ func main() {
 	router := chi.NewRouter()
 
 	router.Route("/", func(r chi.Router) {
-		r.Get("/user", rest.CreateUser)
-		r.Get("/login", rest.Login)
+		r.Post("/user", rest.CreateUser)
+		r.Post("/login", rest.Login)
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))
