@@ -8,4 +8,8 @@ const (
 	DATA_INTEGRITY_ERROR  = "Check data integrity"
 	USER_CREATION_ERROR   = "Unable to create user"
 	USER_EXISTS           = "User already exists"
+	AUTHENTICATION_NEEDED = "Authentication needed."
+	PLEASE_LOGIN          = " Please log in!"
+	NO_RECORD_FOUND       = "No record found."
+	MARSHAL_ERROR         = "Internal Error. Marshal problem"
 )

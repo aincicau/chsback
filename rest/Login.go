@@ -19,8 +19,6 @@ var (
 	store = sessions.NewCookieStore(key)
 )
 
-//Login is a function that creates a session and verifies if the credentials exist in the database or not.
-//If there is no error it will create a session and will sign in the user.
 func Login(rw http.ResponseWriter, r *http.Request) {
 
 	reqbody := r.Body
