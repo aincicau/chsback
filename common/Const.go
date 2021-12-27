@@ -7,4 +7,5 @@ const (
 	UNMARSHAL_ERROR       = "Internal Error. Unmarshal problem"
 	DATA_INTEGRITY_ERROR  = "Check data integrity"
 	USER_CREATION_ERROR   = "Unable to create user"
+	USER_EXISTS           = "User already exists"
 )

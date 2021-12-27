@@ -5,6 +5,7 @@ import (
 	"chsback/db"
 	"chsback/entity"
 	"chsback/utils"
+	"encoding/base64"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -27,10 +28,19 @@ func CreateUser(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	result := db.GetDB().Create(&user)
-	if result.Error != nil {
-		logrus.WithError(result.Error).Error(common.USER_CREATION_ERROR)
-		http.Error(rw, common.USER_CREATION_ERROR, http.StatusBadRequest)
-		return
+	user.Password = base64.StdEncoding.EncodeToString([]byte(user.Password))
+
+	result := db.GetDB().Find(&entity.User{}).Where("email=?", user.Email)
+
+	if result.RecordNotFound() {
+		result = db.GetDB().Create(&user)
+		if result.Error != nil {
+			logrus.WithError(result.Error).Error(common.USER_CREATION_ERROR)
+			http.Error(rw, common.USER_CREATION_ERROR, http.StatusBadRequest)
+			return
+		}
+	} else {
+		logrus.WithError(result.Error).Error(common.USER_EXISTS)
+		http.Error(rw, common.USER_EXISTS, http.StatusBadRequest)
 	}
 }

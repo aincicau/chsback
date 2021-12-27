@@ -5,6 +5,7 @@ import (
 	"chsback/db"
 	"chsback/rest"
 	"log"
+	"net/http"
 
 	"github.com/go-chi/chi"
 )
@@ -22,4 +23,6 @@ func main() {
 	router.Route("/", func(r chi.Router) {
 		r.Get("/user", rest.CreateUser)
 	})
+
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
