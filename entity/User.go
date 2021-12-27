@@ -6,4 +6,5 @@ type User struct {
 	Email     string    `gorm:"type:varchar(255);not null;unique"`
 	Password  string    `gorm:"type:varchar(255);not null"`
 	Histories []History `gorm:"foreignKey:UserID"`
+	Sessions  []Session `gorm:"foreignKey:UserID"`
 }

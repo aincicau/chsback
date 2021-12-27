@@ -19,4 +19,11 @@ CREATE TABLE histories (
     CONSTRAINT fk_history_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+CREATE TABLE sessions (
+    id uuid DEFAULT uuid_generate_v4(),
+    user_id uuid NOT NULL,
+    CONSTRAINT pk_session_id PRIMARY KEY (id),
+    CONSTRAINT fk_session_user FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 COMMIT;
