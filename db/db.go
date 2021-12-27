@@ -41,3 +41,7 @@ func InitDatabase() {
 
 	db.LogMode(config.GetConfig().Database.LogMode)
 }
+
+func GetDB() *gorm.DB {
+	return db
+}
