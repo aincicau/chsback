@@ -5,6 +5,8 @@ import (
 	"chsback/config"
 
 	"github.com/golang-migrate/migrate"
+	_ "github.com/golang-migrate/migrate/database/postgres"
+	_ "github.com/golang-migrate/migrate/source/file"
 	"github.com/jinzhu/gorm"
 	"github.com/sirupsen/logrus"
 )

@@ -6,7 +6,7 @@ CREATE TABLE users (
     username varchar(255) NOT NULL UNIQUE,
     email varchar(255) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
-    CONSTRAINT pk_user_id PRIMARY KEY (id),
+    CONSTRAINT pk_user_id PRIMARY KEY (id)
 );
 
 COMMIT;
