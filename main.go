@@ -1,4 +1,4 @@
-package chsback
+package main
 
 import (
 	"chsback/rest"
