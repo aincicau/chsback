@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+	// model := tg.LoadModel("model/output/keras", []string{"serve"}, nil)
 	err := config.InitConfig()
 	if err != nil {
 		log.Fatal("Not able to create config")

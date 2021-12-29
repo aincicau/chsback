@@ -3,6 +3,7 @@ module chsback
 go 1.16
 
 require (
+	github.com/galeone/tfgo v0.0.0-20210914072119-caabdf830ee3
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/cors v1.2.0
 	github.com/go-playground/universal-translator v0.18.0 // indirect
