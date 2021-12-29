@@ -4,7 +4,7 @@ import (
 	"chsback/config"
 	"chsback/db"
 	"chsback/rest"
-	"chsback/utils"
+	"chsback/services"
 	"log"
 	"net/http"
 
@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	utils.LoadModel()
+	services.LoadModel()
 
 	err := config.InitConfig()
 	if err != nil {
@@ -37,6 +37,7 @@ func main() {
 		r.Post("/user", rest.CreateUser)
 		r.Post("/login", rest.Login)
 		r.Get("/history", rest.GetHistory)
+		r.Post("/process", rest.Process)
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))
