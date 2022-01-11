@@ -80,5 +80,7 @@ func Login(rw http.ResponseWriter, r *http.Request) {
 		if result.Error != nil {
 			http.Error(rw, result.Error.Error(), http.StatusInternalServerError)
 		}
+
 	}
+	rw.Write([]byte(userDB.Username))
 }
