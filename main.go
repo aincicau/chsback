@@ -13,8 +13,6 @@ import (
 )
 
 func main() {
-	services.LoadModel()
-
 	err := config.InitConfig()
 	if err != nil {
 		log.Fatal("Not able to create config")
