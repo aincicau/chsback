@@ -34,6 +34,7 @@ func main() {
 		r.Post("/user", rest.CreateUser)
 		r.Post("/login", rest.Login)
 		r.Get("/history", rest.GetHistory)
+		r.Get("/logout", rest.Logout)
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))
