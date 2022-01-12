@@ -34,6 +34,7 @@ func main() {
 		r.Post("/user", rest.CreateUser)
 		r.Post("/login", rest.Login)
 		r.Get("/history", rest.GetHistory)
+		r.Post("/history", rest.PostHistory)
 		r.Get("/logout", rest.Logout)
 	})
 
