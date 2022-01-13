@@ -30,7 +30,7 @@ func CreateUser(rw http.ResponseWriter, r *http.Request) {
 
 	user.Password = base64.StdEncoding.EncodeToString([]byte(user.Password))
 
-	result := db.GetDB().Find(&entity.User{}).Where("email=?", user.Email)
+	result := db.GetDB().Find(&entity.User{}, "email=?", user.Email)
 
 	if result.RecordNotFound() {
 		result = db.GetDB().Create(&user)
